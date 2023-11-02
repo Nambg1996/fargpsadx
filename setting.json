@@ -1,0 +1,7 @@
+{ 
+    
+   "localTableName":"sensor_data",
+  "remoteTableName":"gpsadxnewdata"
+
+}
+
