@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Change to the directory where your Python scripts are located
-cd /home/pi/namtyk/
-
+cd /home/pi/nam_test/fargpsadx
 # Run makeLocalDatabase.py
 /usr/bin/python3 makeLocalDatabase.py&
 

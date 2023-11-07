@@ -18,11 +18,3 @@ def connect_to_wifi():
     
     
     
-""" while True:
-    if is_wifi_available():
-        insert_and_delete_records()
-        #print("wifi is ok")
-    else:
-        connect_to_wifi()
-        time.sleep(3)  # Adjust the sleep duration as needed      
-        print("Waiting for Wi-Fi to be available...") """

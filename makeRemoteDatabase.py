@@ -5,9 +5,7 @@ import psycopg2
 import time
 import requests
 #import alertmess
-
 import networks
-
 
 def conectToDatabaseAndMakeTable():
     # Establish a connection to the database
