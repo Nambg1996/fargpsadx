@@ -1,0 +1,3 @@
+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
+
+git remote set-url origin https://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@github.com/Nambg1996/fargpsadx.git

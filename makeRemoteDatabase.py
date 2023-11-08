@@ -6,6 +6,15 @@ import time
 import requests
 #import alertmess
 import networks
+import threading
+
+def wifi_check_thread():
+    while not networks.is_wifi_available():
+        print("Waiting for Wi-Fi to be available...")
+        networks.connect_to_wifi()
+        time.sleep(3)
+    conectToDatabaseAndMakeTable()    
+        
 
 def conectToDatabaseAndMakeTable():
     # Establish a connection to the database
@@ -55,20 +64,23 @@ def conectToDatabaseAndMakeTable():
     cursor.close()
     remote_conn.close()
     
-
-""" while networks.is_wifi_available():
-    #print("wifi is ok")
-    conectToDatabaseAndMakeTable()
-else:
-    print("Waiting for Wi-Fi to be available...")
-    networks.connect_to_wifi()
-    time.sleep(3)  # Adjust the sleep duration as needed    """   
+   
     
-    
-while not networks.is_wifi_available():
+""" while not networks.is_wifi_available():
     print("Waiting for Wi-Fi to be available...")
     networks.connect_to_wifi()
     time.sleep(3)  # Adjust the sleep duration as needed
 
 # Wi-Fi is available, so connect to the database and make the table
-conectToDatabaseAndMakeTable()    
+conectToDatabaseAndMakeTable()  """
+
+
+# Create a thread to run the Wi-Fi check
+wifi_thread = threading.Thread(target=wifi_check_thread)
+# Start the thread
+wifi_thread.start()
+
+
+
+
+   

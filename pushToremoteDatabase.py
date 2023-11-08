@@ -7,23 +7,7 @@ import networks
 
             
 """ every update data to remote Database. it will automaticlly delete record by time """
-
-        
-""" def is_wifi_available():
-    try:
-        response = subprocess.run(['ping', '-c', '1', 'www.google.com'], capture_output=True, text=True)
-        return response.returncode == 0
-    except subprocess.CalledProcessError:
-        return False
-    
-def connect_to_wifi():
-    ssid = "ASUKA5"  # Replace with your actual Wi-Fi SSID
-    password = "2019kyohei2019"  # Replace with your actual Wi-Fi password
-    cmd = f"sudo nmcli dev wifi connect '{ssid}' password '{password}'"
-    subprocess.run(cmd, shell=True)
-
-    print("Wi-Fi connection established") """
-    
+ 
 
 def insert_and_delete_records():
     # Connect to the local SQLite database
@@ -88,6 +72,7 @@ while True:
     if networks.is_wifi_available():
         #print("wifi is ok")
         insert_and_delete_records()
+        
     else:
         print("Waiting for Wi-Fi to be available...")
         networks.connect_to_wifi()

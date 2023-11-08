@@ -6,6 +6,8 @@ import os
 import math
 import time
 
+import checkDatabaseSize
+
 #import alertmess
 
 
@@ -66,7 +68,10 @@ def getdata():
         
 
 while True:
-        getdata()
+        if checkDatabaseSize.toGb()<5:
+          getdata()
+        else:
+          pass        
   
         
 
