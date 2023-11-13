@@ -66,11 +66,12 @@ def insert_and_delete_records():
         local_conn.close()
         remote_cursor.close()
         remote_conn.close()
+        
 
 # Continuously check Wi-Fi availability and execute the function when Wi-Fi is available
 while True:
     if networks.is_wifi_available():
-        #print("wifi is ok")
+        print("wifi is ok")
         insert_and_delete_records()
         
     else:

@@ -8,8 +8,9 @@ cd /home/pi/nam_test/fargpsadx
 # Run getdataUartToLocalDatabase.py
 /usr/bin/python3 getdataUartToLocalDatabase.py&
 
-# Run makeRemoteDatabase.py
-/usr/bin/python3 makeRemoteDatabase.py&
+# Run createListTableOnRemoteServer.py make ip tracking Raspberry table and table data 
+/usr/bin/python3 createListTableOnRemoteServer.py& 
+
 
 # Run pushToremoteDatabase.py
 /usr/bin/python3 pushToremoteDatabase.py&

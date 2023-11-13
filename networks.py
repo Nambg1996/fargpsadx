@@ -9,12 +9,19 @@ def is_wifi_available():
         return False
     
 def connect_to_wifi():
+
     ssid = "TYK_Network"  # Replace with your actual Wi-Fi SSID
     password = "x4RTA6Xn"  # Replace with your actual Wi-Fi password
-    cmd = f"sudo nmcli dev wifi connect '{ssid}' password '{password}'"
-    subprocess.run(cmd, shell=True)
+    cmd = """sudo nmcli dev wifi connect '{}' password '{}'""".format(ssid,password)
 
-    print("Wi-Fi connection established")
+    try:
+        subprocess.run(cmd, shell=True)
+        print("Wi-Fi connection established")
+    except subprocess.CalledProcessError as e:
+        print(f"Error while connecting to Wi-Fi: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
     
     
     
