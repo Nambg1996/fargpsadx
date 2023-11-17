@@ -1,5 +1,5 @@
 import psycopg2
-
+import socket
 
 
 def conectToDatabaseAndMakeTable(tableName):
@@ -54,4 +54,18 @@ def conectToDatabaseAndMakeTable(tableName):
     # Close the cursor and the database connection
     cursor.close()
     remote_conn.close()
+    
+def get_local_ip_address():
+    try:
+        # Use a dummy socket to get the local IP address
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 0))  # Connect to a known external server
+        local_ip_address = s.getsockname()[0]
+        s.close()
+        return local_ip_address
+    except Exception as e:
+        print(f"Error getting local IP address: {e}")
+        return None
+
+
    
