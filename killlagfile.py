@@ -21,6 +21,7 @@ while True:
         time.sleep(8)
 
         # Start the script again
+        #pushToremoteDatabase.py 2>&1 | tee -a log/pushToremoteDatabase.txt
         try:
             subprocess.Popen(["python3", script_name])  # Adjust the command as needed
             print("restart ok")

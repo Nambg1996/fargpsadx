@@ -1,10 +1,8 @@
-#!/bin/bash
+import time
 
-script_name="pushToremoteDatabase.py"
+check=1
 
-# Check if the script is running
-if pgrep -f "$script_name" > /dev/null; then
-    echo "$script_name is running."
-else
-    echo "$script_name is not running."
-fi
+while 1:
+ print("nam test log")
+ 
+ check=0

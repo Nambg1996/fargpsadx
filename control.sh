@@ -13,4 +13,10 @@ cd /home/pi/nam_test/fargpsadx
 
 
 # Run pushToremoteDatabase.py
-/usr/bin/python3 pushToremoteDatabase.py&
+/usr/bin/python3  pushToremoteDatabase.py 2>&1 | tee -a log/pushToremoteDatabase.txt &
+
+
+# Run killlagfile.py
+#/usr/bin/python3 killlagfile.py&
+
+
