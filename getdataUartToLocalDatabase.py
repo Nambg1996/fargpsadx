@@ -31,9 +31,11 @@ def InsertDataToLocalDatabase(data):
                                 ax=float(adx[0])
                                 ay=float(adx[1])
                                 az=float(adx[2])
+                                arms=float(adx[3])
                                 asum=math.sqrt(ax*ax+ay*ay+az*az)
+                                
                                 current_time = datetime.datetime.now()
-                                data = {"ax": ax,"ay": ay,"az": az,"asum": asum,"lat": lat,"lon": lon}
+                                data = {"ax": ax,"ay": ay,"az": az,"asum": asum,"arms": arms,"lat": lat,"lon": lon}
                                 datajson = json.dumps(data)
                                 conn = sqlite3.connect('mydatabase.db')
                                 c = conn.cursor()

@@ -4,6 +4,7 @@ import os
 
 # Check if the database file exists
 db_file = 'mydatabase.db'
+conn = sqlite3.connect(db_file)
 if not os.path.exists(db_file):
     # If it doesn't exist, create a new database
     conn = sqlite3.connect(db_file)

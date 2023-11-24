@@ -5,7 +5,6 @@ import time
 import requests
 import networks
 
-
 """ every update data to remote Database. it will automaticlly delete record by time """
 
 
@@ -16,7 +15,7 @@ def insert_and_delete_records():
     local_cursor = local_conn.cursor()
 
     # Connect to the remote PostgreSQL database
-    print("the records is inserting to database")
+    #print("the records is inserting to database")
 
 
     try:
@@ -60,14 +59,14 @@ def insert_and_delete_records():
 
     except Exception as e:
         # Handle the exception (e.g., log an error, rollback transactions, etc.)
-        print(f"Error: {e}")
+        #print(f"Error: {e}")
         try:
             remote_conn.rollback()
             local_conn.rollback()
         except Exception as e:
             current_time=time.time()
             formatted_time= time.ctime(current_time)
-            print(f"{formatted_time} Error is catching: {e}")
+            #print(f"{formatted_time} Error is catching: {e}")
 
 
 
@@ -78,6 +77,6 @@ while True:
         insert_and_delete_records()
 
     else:
-        print("Waiting for Wi-Fi to be available...")
+        #print("Waiting for Wi-Fi to be available...")
         #networks.connect_to_wifi()
         time.sleep(5)  # Adjust the sleep duration as needed  
