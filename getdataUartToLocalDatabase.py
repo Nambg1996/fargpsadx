@@ -44,7 +44,7 @@ def InsertDataToLocalDatabase(data):
                                 # Commit changes and close connection
                                 conn.commit()
                                 conn.close()
-                                time.sleep(0.008)  
+                                time.sleep(0.09)  
  
    
 
@@ -66,7 +66,7 @@ def getdata():
         except UnicodeDecodeError as e:
          print(f"Data decoding error: {e}")
         except Exception as e:
-         print(f"An unexpected error occurred: {e}")
+         print(f"An unexpected error occurred at here: {e}")
         
 
 while True:
